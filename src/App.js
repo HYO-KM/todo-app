@@ -1,19 +1,20 @@
-import './App.css';
-import {Title} from "./components/Title";
-import {InputForm} from "./components/InputForm";
-import { TodoList } from './components/TodoList';
-import { useState } from 'react';
+import './App.css'; // アプリ全体のスタイルを適用
+import { Title } from "./components/Title"; // タイトルコンポーネントのインポート
+import { InputForm } from "./components/InputForm"; // タスク入力フォームのインポート
+import { TodoList } from './components/TodoList'; // タスク一覧コンポーネントのインポート
+import { useState } from 'react'; // React の useState フックをインポート
 
 function App() {
+  // タスク一覧を管理する state
   const [taskList, setTaskList] = useState([]);
 
   return (
-    <div className="body">
-      <Title />
-      <InputForm taskList={taskList} setTaskList={setTaskList} />
-      <TodoList taskList={taskList} setTaskList={setTaskList}/>
+    <div className="body"> {/* アプリのコンテナ */}
+      <Title /> {/* タイトルコンポーネントの表示 */}
+      <InputForm taskList={taskList} setTaskList={setTaskList} /> {/* タスク入力フォームの表示 */}
+      <TodoList taskList={taskList} setTaskList={setTaskList} /> {/* タスク一覧の表示 */}
     </div>
   );
 }
 
-export default App;
+export default App; // App コンポーネントをエクスポート
